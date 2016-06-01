@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    
+	<title>Loading ....</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/main.css">
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	
+	  
+	  
+	<style type="text/css">
+	.info {
+		color: #3498db; 
+		text-decoration: none;
+	}
+	.entry-header {
+		text-align: left;
+		margin: 0 auto 50px auto;
+		width: 80%;
+        max-width: 978px;
+		position: relative;
+		z-index: 10001;
+	}
+	#demo-content {
+		padding-top: 100px;
+	}
+	</style>
+	
+	<script>
+
+		var submodules = [];
+		{% for ngmod in ng_modules %}submodules.push('[[ngmod]]');{% endfor %}
+		// register modules, once all modules get loaded, initialize  angularjs
+		var loadedmodules = 1;
+		function insRegisterModule(modulename){
+			// todo.check against name
+			loadedmodules++;
+			if(submodules.length === loadedmodules){
+				console.log(submodules)
+				$(function(){
+					
+					var modulecontext = {};
+					{% for mcx in modulecontext %} modulecontext['[[mcx.name]]'] = '[[mcx.context]]'; {% endfor %}
+					
+					// setting context information for each module
+					var dynmodule = angular.module('dynamicui');
+					dynmodule.value("modulecontext",modulecontext);
+					
+					$("#entheader").remove();
+					$('body').addClass('loaded');
+					
+					setTimeout(function(){ 
+						
+						angular.bootstrap(document, submodules);
+					}, 200);
+					
+					setTimeout(function(){ 
+						$("#demo-content").remove();
+					}, 1000);
+				})
+				
+			}
+		}
+	
+	
+	</script>    
+	
+	<!-- <link rel="import" href="base-libraries.html"/> -->
+	
+  </head>
+ <body ng-controller="CoreUIController" class="demo">
+ <script>
+	setTimeout(function(){ 
+		if(!document.getElementById('link1')) {
+		    var link = document.createElement('link');
+		    link.id = 'link1';
+		    link.rel = 'import';
+		    link.href = 'base-libraries.html';
+		   document.head.appendChild(link);
+		}
+	}, 1000);
+</script>
+
+ 	<div id="demo-content">
+ 		<header class="entry-header" id="entheader">
+			<h4 class="entry-title info">Loading application....</h4>
+		</header>
+		<div id="loader-wrapper">
+			<div id="loader"></div>
+			<div class="loader-section section-left"></div>
+            <div class="loader-section section-right"></div>
+		</div>
+	</div>
+     <main-view></main-view> 
+
+
+
+
+</body>
+</html>

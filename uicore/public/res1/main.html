@@ -1,0 +1,22 @@
+<link rel="import"
+      href="comp1.html">
+<script src="library.js"></script>
+<script src="/mainlib.js"></script>
+
+<link rel="import" type="text/ng-template"  id="tpl/comp1template.html" href="tpl/comp1template.html"/>
+
+<script>
+
+angular.module("comp1",['uicore'])
+.directive('component1', function(config) {
+  return {
+      restrict: 'AE',
+      replace: 'true',
+      templateUrl: 'tpl/comp1template.html'
+  };
+})
+.run(function(){
+	console.log("Loaded angular module - comp1");
+});
+</script>
+<div ></div>

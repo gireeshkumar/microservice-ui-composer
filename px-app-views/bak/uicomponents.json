@@ -1,0 +1,28 @@
+{
+	"components": [
+		{
+			"id": "bowercomponents",
+			"modulename": "bower_components",
+			"context":"bower_components",
+			"location": "http://localhost:8080/px-app-views/bower_components/"
+		},
+		{
+			"id": "px-comp-barchart",
+			"modulename": "px-comp-barchart",
+			"context":"px-comp-barchart",
+			"location": "http://localhost:8080/px-comp-barchart/"
+		},
+		{
+			"id": "px-comp-linechart",
+			"modulename": "px-comp-linechart",
+			"context":"px-comp-linechart",
+			"location": "http://localhost:8080/px-comp-linechart/"
+		},
+		{
+			"id": "ins-comp-tree",
+			"modulename": "ins-comp-tree",
+			"context":"ins-comp-tree",
+			"location": "http://localhost:8080/ins-comp-tree/"
+		}
+	]
+}

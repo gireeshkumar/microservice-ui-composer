@@ -1,0 +1,6 @@
+{
+	"view": {
+		"context": "px-app-views",
+		"location":"https://localhost:8080/px-app-views/"
+	}
+}

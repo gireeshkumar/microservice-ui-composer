@@ -1,0 +1,19 @@
+{
+  "name": "px-app-views",
+  "authors": [
+    "Gireesh Kumar <gireeshkumar.g@gmail.com>"
+  ],
+  "description": "View project for the main application",
+  "main": "views/main-view.html",
+  "ngmodule":"main-view",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

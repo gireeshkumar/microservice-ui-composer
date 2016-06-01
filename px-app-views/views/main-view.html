@@ -1,0 +1,184 @@
+
+
+<dom-module id="main-view">
+<script src="../js/app.js"></script>
+
+<template >
+
+<style>
+html,
+body {
+  height: 100%;
+  background-color: #333;
+}
+body {
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+}
+
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+}
+
+.header-bar{
+	height:100px
+}
+
+	</style>
+<div ng-controller="MainViewController">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">iReport</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="jumbotron">
+      <div class="container-fluid ">
+
+      <div class="row">
+        <div class="col-md-12">
+        
+        	<div class="panel panel-info">
+			  <div class="panel-heading">
+			  
+			  <button ng-click="loadTree()">{[buttonname]}</button>
+			  <span> Data binding with angularjs and Polymer, Data Loaded via angulajs,  passed to Polymer component</span>
+			  
+			  </div>			 
+			</div>
+        
+        </div>
+      </div>
+       <div class="row row-eq-height">
+        <div class="col-md-3">
+        	<div class="row">
+		        <div class="col-md-12" >
+		        
+		        <div class="panel panel-info" style="height:200px">
+				  <div class="panel-heading">Asset Tree</div>	
+				  <div class="panel-body" style="overflow:scroll; height:180px">
+				  
+				    <ins-comp-tree data="{[treedata]}"></ins-comp-tree>
+				    
+				  </div>		 
+				</div>
+		        
+		        </div>
+		        <div class="col-md-12">
+		        
+		         <div class="panel panel-info" style="height:200px">
+				  <div class="panel-heading">Component List</div>	
+				  <div class="panel-body">
+				    component icon grid here
+				  </div>		 
+				</div>
+		        
+		        </div>
+		      </div>
+        </div>
+        <div class="col-md-9" >
+        
+         <div class="panel panel-info" style="height:900px">
+				  <div class="panel-heading">Canvas work area</div>	
+				  <div class="panel-body">
+				    Canvas here
+				    <div> Angularjs Binding Demo
+      <label>Name:</label>
+      <input type="text" ng-model="yourName" placeholder="Enter a name here">
+      <hr>
+      <h3>Hello  <span ng-bind="yourName"></span>!</h3>
+    </div>
+    
+    
+     <div class="panel panel-info" style="height:200px">
+				  <div class="panel-heading">Line Chart</div>	
+				  <div class="panel-body">
+				  
+				    <giri-line-chart></giri-line-chart>
+				 
+				  </div>		 
+				</div>
+				
+				
+				
+				
+				 <div class="panel panel-info" style="height:400px">
+				  <div class="panel-heading">Bar Chart</div>	
+				  <div class="panel-body">
+				  
+				    <giri-bar-chart></giri-bar-chart>
+				 
+				  </div>		 
+				</div>
+    
+    
+    
+    
+    
+				    
+				  </div>		 
+				</div>
+        
+        </div>
+      </div>
+     
+      
+      
+	</div><!-- /container-fluid -->
+<!-- 
+	<h1>Main view</h1>
+	
+	</br>
+	</hr>
+	<h3>Simple Line Chart</h3>
+	<giri-line-chart></giri-line-chart>
+	
+	</hr>
+	<h3>Simple Bar Chart</h3>
+	<giri-bar-chart></giri-bar-chart>
+	-->
+
+<hr>
+
+      <footer>
+        <p>&copy; 2015 Company, Inc.</p>
+      </footer>
+    </div> <!-- /jumbotron -->
+</template>
+<script>
+	Polymer({
+		is : "main-view"
+	});
+</script> 
+</div>
+</dom-module>

@@ -1,0 +1,28 @@
+{
+	"components": [
+		{
+			"id": "bowercomponents",
+			"modulename": "bower_components",
+			"context":"bower_components",
+			"location": "https://g-px-app-views.run.aws-usw02-pr.ice.predix.io/bower_components/"
+		},
+		{
+			"id": "g-px-comp-barchart",
+			"modulename": "g-px-comp-barchart",
+			"context":"g-px-comp-barchart",
+			"location": "https://g-px-comp-barchart.run.aws-usw02-pr.ice.predix.io/"
+		},
+		{
+			"id": "g-px-comp-linechart",
+			"modulename": "g-px-comp-linechart",
+			"context":"g-px-comp-linechart",
+			"location": "https://g-px-comp-linechart.run.aws-usw02-pr.ice.predix.io/"
+		},
+		{
+			"id": "g-ins-comp-tree",
+			"modulename": "g-ins-comp-tree",
+			"context":"g-ins-comp-tree",
+			"location": "https://g-ins-comp-tree.run.aws-usw02-pr.ice.predix.io/"
+		}
+	]
+}

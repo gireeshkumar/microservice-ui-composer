@@ -1,0 +1,10 @@
+{
+  "name": "uicoreapp",
+  "dependencies": {
+    "express": "^4.13.4",
+    "http-proxy": "^1.13.3",
+    "https-proxy-agent": "^1.0.0",
+    "swig": "^1.4.2",
+    "unirest": "^0.5.0"
+  }
+}

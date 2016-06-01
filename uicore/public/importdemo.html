@@ -1,0 +1,42 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+<script>
+angular.module("uicore",[])
+.value("config",{comp1:{"root":"res1/"}})
+.controller("MainAppController", function($scope, $compile){
+	$scope.ontest = function(){
+		alert("MainAppController - ontest");
+	}
+	$scope.loadComp1 = function(){
+		  var el = $compile( "<component1></component1>" )( $scope );
+		  angular.element("#target").append( el );
+	}
+})
+.run(function(){
+	console.log("Loaded angular module - uicore");
+});
+</script>
+
+<script src="/mainlib.js"></script>
+ <link rel="import" href="res1/main.html">
+ 
+ <link rel="import" href="res2/main.html">
+
+</head>
+<body ng-controller="MainAppController">
+
+<button ng-click="ontest()">Test</button>
+<button ng-click="loadComp1()">LoadComp1</button>
+<div id="target"></div>
+
+<script>
+angular.bootstrap(document, ['uicore','comp1']);
+</script>
+
+</body>
+</html>

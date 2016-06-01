@@ -1,0 +1,38 @@
+<dom-module id="ins-comp-tree">
+<link rel="import" href="bower_components/file-tree/file-tree.html">
+ <template id="just-for-demo" >
+ 	
+ 	 <file-tree data="{{data}}" selected="{{selected}}"></file-tree>
+
+ 	
+ 	
+ </template>
+   <script>
+		
+        Polymer({
+            is: 'ins-comp-tree',
+           	 properties: {
+
+      	      /**
+      	       * `data` is the data to be used for the tree.
+      	      */
+      	      data: {
+      	        type: Object,
+      	        value: function() {
+      	          return {};
+      	        },
+      	        observe: "_dataChanged"
+      	      },
+
+      	      /**
+      	       * `selected` is the selected folder.
+      	      */
+      	      selected: {
+      	        type: Object,
+      	        value: null
+      	      }
+      	    }
+        });
+  </script>
+   
+</dom-module>
